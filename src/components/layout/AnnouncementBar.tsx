@@ -12,7 +12,7 @@ export function AnnouncementBar() {
   return (
     <div className="relative flex items-center justify-center border-b border-border bg-sand/60 px-4 py-2 text-center text-xs font-medium text-charcoal sm:text-sm">
       <p>
-        <span className="mr-1.5 text-terracotta">●</span>
+        <span className="mr-1.5 text-terracotta" aria-hidden="true">●</span>
         {siteConfig.announcementBar.message}
       </p>
       {siteConfig.announcementBar.dismissible && (

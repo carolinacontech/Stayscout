@@ -64,11 +64,23 @@ h4,
   font-family: var(--font-serif);
   font-weight: 700;
   letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 
 :focus-visible {
   outline: 2px solid var(--color-terracotta);
   outline-offset: 2px;
+}
+
+a,
+button,
+[role="button"] {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
 }
 
 .line-clamp-2 {

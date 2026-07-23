@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { usStates } from "@/data/usStates";
 import { stayTypes } from "@/data/stayTypes";
@@ -10,6 +11,79 @@ import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import type { ActiveFilterChip } from "@/lib/filterProperties";
 import { track } from "@/lib/analytics";
+
+/**
+ * Keeps the number input snappy (cheap per-keystroke local state) while
+ * debouncing the actual URL/navigation update, so typing "300" doesn't
+ * trigger three separate router.push navigations.
+ */
+function useDebouncedParam(
+  key: string,
+  updateParam: (key: string, value: string | null) => void,
+  currentValue: string
+) {
+  const [draft, setDraft] = useState(currentValue);
+  const [syncedValue, setSyncedValue] = useState(currentValue);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+
+  // Reset the local draft whenever the URL param changes externally (e.g. "Clear
+  // filters"), following React's recommended render-time state adjustment
+  // instead of an effect, so this never fires a redundant extra render.
+  if (currentValue !== syncedValue) {
+    setSyncedValue(currentValue);
+    setDraft(currentValue);
+  }
+
+  function handleChange(value: string) {
+    setDraft(value);
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => updateParam(key, value || null), 500);
+  }
+
+  useEffect(() => () => clearTimeout(timeoutRef.current), []);
+
+  return [draft, handleChange] as const;
+}
+
+function DebouncedNumberField({
+  id,
+  name,
+  label,
+  min,
+  step,
+  placeholder,
+  paramKey,
+  currentValue,
+  updateParam,
+}: {
+  id: string;
+  name: string;
+  label: string;
+  min?: number;
+  step?: number;
+  placeholder?: string;
+  paramKey: string;
+  currentValue: string;
+  updateParam: (key: string, value: string | null) => void;
+}) {
+  const [draft, handleChange] = useDebouncedParam(paramKey, updateParam, currentValue);
+
+  return (
+    <Input
+      id={id}
+      name={name}
+      label={label}
+      type="number"
+      inputMode="numeric"
+      min={min}
+      step={step}
+      placeholder={placeholder}
+      autoComplete="off"
+      value={draft}
+      onChange={(e) => handleChange(e.target.value)}
+    />
+  );
+}
 
 const booleanFilters: { key: string; label: string }[] = [
   { key: "waterfront", label: "Waterfront" },
@@ -41,6 +115,7 @@ export function FilterControls() {
     <div className="flex flex-col gap-5">
       <Select
         id="filter-state"
+        name="state"
         label="State"
         placeholder="Any state"
         value={searchParams.get("state") ?? ""}
@@ -49,37 +124,41 @@ export function FilterControls() {
       />
       <Select
         id="filter-category"
+        name="category"
         label="Stay type"
         placeholder="Any stay type"
         value={searchParams.get("category") ?? ""}
         onChange={(e) => updateParam("category", e.target.value || null)}
         options={stayTypes.map((s) => ({ label: s.name, value: s.slug }))}
       />
-      <Input
+      <DebouncedNumberField
         id="filter-guests"
+        name="guests"
         label="Minimum guests"
-        type="number"
         min={1}
-        value={searchParams.get("guests") ?? ""}
-        onChange={(e) => updateParam("guests", e.target.value || null)}
+        paramKey="guests"
+        currentValue={searchParams.get("guests") ?? ""}
+        updateParam={updateParam}
       />
-      <Input
+      <DebouncedNumberField
         id="filter-bedrooms"
+        name="bedrooms"
         label="Minimum bedrooms"
-        type="number"
         min={1}
-        value={searchParams.get("bedrooms") ?? ""}
-        onChange={(e) => updateParam("bedrooms", e.target.value || null)}
+        paramKey="bedrooms"
+        currentValue={searchParams.get("bedrooms") ?? ""}
+        updateParam={updateParam}
       />
-      <Input
+      <DebouncedNumberField
         id="filter-budget"
+        name="budget"
         label="Budget (max per night)"
-        type="number"
         min={50}
         step={25}
-        placeholder="e.g. 300"
-        value={searchParams.get("budget") ?? ""}
-        onChange={(e) => updateParam("budget", e.target.value || null)}
+        placeholder="e.g. 300…"
+        paramKey="budget"
+        currentValue={searchParams.get("budget") ?? ""}
+        updateParam={updateParam}
       />
       <fieldset className="flex flex-col gap-2.5">
         <legend className="mb-1 text-sm font-medium text-charcoal">Amenities</legend>

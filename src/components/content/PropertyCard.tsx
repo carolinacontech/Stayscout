@@ -61,7 +61,7 @@ export function PropertyCard({ property }: PropertyCardProps) {
 
         <div className="mt-auto flex items-center justify-between pt-2">
           {property.approximatePriceFrom ? (
-            <p className="text-sm font-medium text-charcoal">
+            <p className="tabular-nums text-sm font-medium text-charcoal">
               From ${property.approximatePriceFrom}
               <span className="text-charcoal/60">/night*</span>
             </p>

@@ -20,7 +20,11 @@ export function NewsletterForm() {
 
   if (status === "success") {
     return (
-      <div className="flex items-center gap-3 rounded-md bg-white/10 px-5 py-4 text-white">
+      <div
+        role="status"
+        aria-live="polite"
+        className="flex items-center gap-3 rounded-md bg-white/10 px-5 py-4 text-white"
+      >
         <CheckCircle2 className="h-5 w-5 shrink-0" aria-hidden="true" />
         <p className="text-sm">You&apos;re on the list. Look out for new stays in your inbox soon.</p>
       </div>
@@ -46,6 +50,7 @@ export function NewsletterForm() {
           type="email"
           name="email"
           autoComplete="email"
+          spellCheck={false}
           required
           className="bg-white"
         />

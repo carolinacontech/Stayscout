@@ -202,18 +202,18 @@ export default function HomePage() {
       )}
 
       {/* Email signup */}
-      <section className="bg-navy py-16">
+      <section className="border-y border-border py-16">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="font-serif-heading text-3xl font-semibold text-white sm:text-4xl">
+          <h2 className="font-serif-heading text-3xl font-semibold text-navy sm:text-4xl">
             A better getaway starts here.
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-base text-white/80">
+          <p className="mx-auto mt-3 max-w-xl text-base text-charcoal/70">
             Get standout stays, destination guides, and fresh weekend ideas delivered to your inbox.
           </p>
           <div className="mx-auto mt-8 max-w-xl text-left">
             <NewsletterForm />
           </div>
-          <p className="mt-4 text-xs text-white/50">
+          <p className="mt-4 text-xs text-charcoal/50">
             We&apos;ll only send travel inspiration — no spam, unsubscribe anytime.
           </p>
         </div>

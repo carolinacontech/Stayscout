@@ -1,13 +1,19 @@
 @import "tailwindcss";
 
+/*
+ * StayScout USA — minimalist coral theme.
+ * Token names (navy, terracotta, ocean, sand, ivory, charcoal, border) are
+ * kept stable so every component built against them updates automatically;
+ * only the underlying values changed when the visual direction did.
+ */
 :root {
-  --color-navy: #12263a;
-  --color-ivory: #f7f3ec;
-  --color-sand: #e8ddcf;
-  --color-ocean: #467c8c;
-  --color-terracotta: #c66a4a;
-  --color-charcoal: #252525;
-  --color-border: #e5e2dc;
+  --color-navy: #262223; /* ink — dark UI surfaces & heading text */
+  --color-ivory: #ffffff; /* page background */
+  --color-sand: #f5f4f2; /* light neutral surface / badge fill */
+  --color-ocean: #e31c41; /* deepened coral — hover/focus state */
+  --color-terracotta: #ff385c; /* coral — the one accent color */
+  --color-charcoal: #262223; /* body text */
+  --color-border: #ededea;
 
   --background: var(--color-ivory);
   --foreground: var(--color-charcoal);
@@ -22,8 +28,8 @@
   --color-charcoal: var(--color-charcoal);
   --color-border: var(--color-border);
 
-  --font-serif: "Playfair Display", "Cormorant Garamond", Georgia, serif;
-  --font-sans: "Inter", "DM Sans", system-ui, sans-serif;
+  --font-serif: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Public Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
 html {
@@ -56,10 +62,12 @@ h3,
 h4,
 .font-serif-heading {
   font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-ocean);
+  outline: 2px solid var(--color-terracotta);
   outline-offset: 2px;
 }
 

@@ -63,6 +63,26 @@ export interface PropertyImage {
   alt: string;
 }
 
+/**
+ * "scout" = written by the StayScout editorial team after evaluating the
+ * listing directly. "guest" = aggregated from people who actually stayed
+ * there (sourced from the underlying Airbnb reviews). Both can be shown
+ * side by side; neither is optional filler for the other.
+ */
+export type ReviewTier = "scout" | "guest";
+
+export interface PropertyReview {
+  tier: ReviewTier;
+  /** 0–10 scale, one decimal place. */
+  score: number;
+  /** e.g. "StayScout Editorial Team" or "183 verified guest reviews". */
+  reviewerLabel: string;
+  summary: string;
+  /** Only ever present on the "scout" tier — guest reviews aren't broken out this way. */
+  pros?: string[];
+  cons?: string[];
+}
+
 export interface Property {
   id: string;
   slug: string;
@@ -103,6 +123,8 @@ export interface Property {
   priceLastChecked?: string;
   nearbyAttractions: string[];
   thingsToConsider: string[];
+  /** Omit entirely until at least one tier of review exists — don't render an empty section. */
+  reviews?: PropertyReview[];
   featured: boolean;
   published: boolean;
   dateAdded: string;

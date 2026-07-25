@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Users, BedDouble, Bath } from "lucide-react";
 import type { Property } from "@/data/types";
 import { Badge } from "@/components/ui/Badge";
+import { ReviewBadge } from "@/components/ui/ReviewBadge";
 
 interface PropertyCardProps {
   property: Property;
@@ -10,6 +11,7 @@ interface PropertyCardProps {
 
 export function PropertyCard({ property }: PropertyCardProps) {
   const image = property.images[0];
+  const scoutReview = property.reviews?.find((r) => r.tier === "scout");
 
   return (
     <article className="group flex flex-col overflow-hidden rounded-lg border border-border bg-white transition-shadow hover:shadow-md">
@@ -27,6 +29,14 @@ export function PropertyCard({ property }: PropertyCardProps) {
           <span className="absolute left-3 top-3 rounded-full bg-navy/85 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-white">
             Demo listing
           </span>
+        )}
+        {scoutReview && (
+          <ReviewBadge
+            tier="scout"
+            score={scoutReview.score}
+            compact
+            className="absolute right-3 top-3 shadow-sm"
+          />
         )}
       </Link>
       <div className="flex flex-1 flex-col gap-3 p-4">

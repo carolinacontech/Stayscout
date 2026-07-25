@@ -13,7 +13,7 @@ import type { Property } from "./types";
  * document type; `slug` becomes the document id.
  */
 export const properties: Property[] = [
-  {
+{
     id: "prop-001",
     slug: "gulfside-dunes-cottage-destin",
     title: "Gulfside Dunes Cottage",
@@ -59,13 +59,32 @@ export const properties: Property[] = [
       "No pool on site — this is a beach-first property, not a resort-style stay.",
       "Popular in summer; book well ahead for June and July.",
     ],
+    reviews: [
+      {
+        tier: "scout",
+        score: 9.3,
+        reviewerLabel: "StayScout Editorial Team",
+        summary:
+          "This cottage sits on a quiet stretch of Old Florida-style beach road, away from the high-rise condo strip. The screened porch and outdoor shower make it easy to live in swimsuits for a week, and the layout works well for two families sharing.",
+        pros: ["Private beach boardwalk", "Outdoor shower", "Screened porch"],
+        cons: ["No pool on site — this is a beach-first property, not a resort-style stay.", "Popular in summer; book well ahead for June and July."],
+      },
+      {
+        tier: "guest",
+        score: 9.1,
+        reviewerLabel: "183 verified guest reviews",
+        summary:
+          "Verified guests consistently highlight private beach boardwalk and say the space over-delivers for families. Cleanliness and host communication come up often in the 183 reviews on file.",
+      },
+    ],
+
     featured: true,
     published: true,
     dateAdded: "2026-01-15",
     lastVerified: "2026-06-01",
     isSampleContent: true,
   },
-  {
+{
     id: "prop-002",
     slug: "conch-shell-hideaway-key-west",
     title: "Conch Shell Hideaway",
@@ -109,13 +128,32 @@ export const properties: Property[] = [
       "Street parking only; a rental car isn't necessary once you're in Old Town.",
       "The pool is a plunge pool for cooling off, not a lap pool.",
     ],
+    reviews: [
+      {
+        tier: "scout",
+        score: 9.1,
+        reviewerLabel: "StayScout Editorial Team",
+        summary:
+          "The house keeps its historic tin roof and shutters outside, but the inside has been fully updated with a small plunge pool tucked into a walled courtyard — a genuinely private outdoor space in a part of Key West where that's rare.",
+        pros: ["Private plunge pool", "Courtyard", "Outdoor shower"],
+        cons: ["Street parking only; a rental car isn't necessary once you're in Old Town.", "The pool is a plunge pool for cooling off, not a lap pool."],
+      },
+      {
+        tier: "guest",
+        score: 8.7,
+        reviewerLabel: "42 verified guest reviews",
+        summary:
+          "Verified guests consistently highlight private plunge pool and say the space over-delivers for couples. Cleanliness and host communication come up often in the 42 reviews on file.",
+      },
+    ],
+
     featured: true,
     published: true,
     dateAdded: "2026-01-20",
     lastVerified: "2026-05-20",
     isSampleContent: true,
   },
-  {
+{
     id: "prop-003",
     slug: "seagrass-bungalow-anna-maria",
     title: "Seagrass Bungalow",
@@ -153,13 +191,32 @@ export const properties: Property[] = [
     priceLastChecked: "2026-04-11",
     nearbyAttractions: ["Bean Point", "Anna Maria City Pier", "Historic Green Village"],
     thingsToConsider: ["No car needed once you arrive — the free island trolley covers most needs."],
+    reviews: [
+      {
+        tier: "scout",
+        score: 8.6,
+        reviewerLabel: "StayScout Editorial Team",
+        summary:
+          "Anna Maria Island keeps a strict low-rise building code, so most stays here feel more like a beach town than a resort strip. This one has hammocks on both decks and a bike rack for getting around the island's free trolley route.",
+        pros: ["Beach access two doors down", "Wraparound deck", "Bikes provided"],
+        cons: ["No car needed once you arrive — the free island trolley covers most needs."],
+      },
+      {
+        tier: "guest",
+        score: 8.5,
+        reviewerLabel: "39 verified guest reviews",
+        summary:
+          "Verified guests consistently highlight beach access two doors down and say the space over-delivers for couples. Cleanliness and host communication come up often in the 39 reviews on file.",
+      },
+    ],
+
     featured: false,
     published: true,
     dateAdded: "2026-02-02",
     lastVerified: "2026-04-11",
     isSampleContent: true,
   },
-  {
+{
     id: "prop-004",
     slug: "smoky-ridge-cabin-gatlinburg",
     title: "Smoky Ridge Cabin",
@@ -198,13 +255,32 @@ export const properties: Property[] = [
     priceLastChecked: "2026-05-02",
     nearbyAttractions: ["Great Smoky Mountains National Park", "Gatlinburg SkyLift Park", "Ober Gatlinburg"],
     thingsToConsider: ["Gravel driveway can be steep in winter weather — an AWD vehicle is worth it December through February."],
+    reviews: [
+      {
+        tier: "scout",
+        score: 8.7,
+        reviewerLabel: "StayScout Editorial Team",
+        summary:
+          "The cabin is set back on a private gravel drive about ten minutes from the Gatlinburg strip, which buys real quiet without adding much drive time. The main draw is the covered hot tub deck with a tree-line mountain view.",
+        pros: ["Hot tub", "Game loft", "Stone fireplace"],
+        cons: ["Gravel driveway can be steep in winter weather — an AWD vehicle is worth it December through February."],
+      },
+      {
+        tier: "guest",
+        score: 8.5,
+        reviewerLabel: "69 verified guest reviews",
+        summary:
+          "Verified guests consistently highlight hot tub and say the space over-delivers for families. Cleanliness and host communication come up often in the 69 reviews on file.",
+      },
+    ],
+
     featured: true,
     published: true,
     dateAdded: "2026-01-10",
     lastVerified: "2026-05-02",
     isSampleContent: true,
   },
-  {
+{
     id: "prop-005",
     slug: "blue-ridge-overlook-cabin",
     title: "Blue Ridge Overlook Cabin",
@@ -241,13 +317,32 @@ export const properties: Property[] = [
     priceLastChecked: "2026-03-18",
     nearbyAttractions: ["Blue Ridge Scenic Railway", "Downtown Blue Ridge", "Toccoa River"],
     thingsToConsider: ["The final approach road is unpaved gravel; drive slowly after rain."],
+    reviews: [
+      {
+        tier: "scout",
+        score: 8.4,
+        reviewerLabel: "StayScout Editorial Team",
+        summary:
+          "The cabin's back deck is the whole point — a long-range ridge view that's especially good at sunset. It's a five-minute drive to downtown Blue Ridge's shops and the scenic railway, close enough for a dinner trip without losing the seclusion.",
+        pros: ["Ridge-view deck", "Wood-burning fire pit", "Hot tub"],
+        cons: ["The final approach road is unpaved gravel; drive slowly after rain."],
+      },
+      {
+        tier: "guest",
+        score: 8.2,
+        reviewerLabel: "57 verified guest reviews",
+        summary:
+          "Verified guests consistently highlight ridge-view deck and say the space over-delivers for couples. Cleanliness and host communication come up often in the 57 reviews on file.",
+      },
+    ],
+
     featured: false,
     published: true,
     dateAdded: "2026-02-14",
     lastVerified: "2026-03-18",
     isSampleContent: true,
   },
-  {
+{
     id: "prop-006",
     slug: "sound-to-sea-outer-banks",
     title: "Sound to Sea House",
@@ -285,13 +380,32 @@ export const properties: Property[] = [
     priceLastChecked: "2026-04-29",
     nearbyAttractions: ["Currituck Beach Lighthouse", "Corolla Wild Horse Tours", "Whalehead Club"],
     thingsToConsider: ["Requires a full-week Saturday-to-Saturday lease during peak summer weeks, standard for this area."],
+    reviews: [
+      {
+        tier: "scout",
+        score: 8.7,
+        reviewerLabel: "StayScout Editorial Team",
+        summary:
+          "This nine-bedroom house is built for the big-family Outer Banks tradition of one lease, everybody in. The rooftop deck clears the dune line, so you can see the ocean from the hot tub without walking down.",
+        pros: ["Private pool", "Rooftop deck", "Elevator"],
+        cons: ["Requires a full-week Saturday-to-Saturday lease during peak summer weeks, standard for this area."],
+      },
+      {
+        tier: "guest",
+        score: 8.4,
+        reviewerLabel: "99 verified guest reviews",
+        summary:
+          "Verified guests consistently highlight private pool and say the space over-delivers for family reunions. Cleanliness and host communication come up often in the 99 reviews on file.",
+      },
+    ],
+
     featured: true,
     published: true,
     dateAdded: "2026-01-25",
     lastVerified: "2026-04-29",
     isSampleContent: true,
   },
-  {
+{
     id: "prop-007",
     slug: "rainbow-row-carriage-house-charleston",
     title: "Rainbow Row Carriage House",
@@ -328,13 +442,32 @@ export const properties: Property[] = [
     priceLastChecked: "2026-05-09",
     nearbyAttractions: ["The Battery", "Rainbow Row", "Charleston City Market"],
     thingsToConsider: ["No on-site parking; a nearby public garage is the practical option."],
+    reviews: [
+      {
+        tier: "scout",
+        score: 8.3,
+        reviewerLabel: "StayScout Editorial Team",
+        summary:
+          "Tucked behind the main house through a private gate, this carriage house keeps its original brick and heart pine floors while adding a modern kitchen. Everything in downtown Charleston's historic district is within a fifteen-minute walk.",
+        pros: ["Private courtyard entrance", "Exposed brick", "Full kitchen"],
+        cons: ["No on-site parking; a nearby public garage is the practical option."],
+      },
+      {
+        tier: "guest",
+        score: 7.9,
+        reviewerLabel: "35 verified guest reviews",
+        summary:
+          "Verified guests consistently highlight private courtyard entrance and say the space over-delivers for couples. Cleanliness and host communication come up often in the 35 reviews on file.",
+      },
+    ],
+
     featured: false,
     published: true,
     dateAdded: "2026-02-20",
     lastVerified: "2026-05-09",
     isSampleContent: true,
   },
-  {
+{
     id: "prop-008",
     slug: "broken-bow-dock-retreat",
     title: "Broken Bow Dock Retreat",
@@ -372,13 +505,32 @@ export const properties: Property[] = [
     priceLastChecked: "2026-04-03",
     nearbyAttractions: ["Broken Bow Lake", "Beavers Bend State Park", "Hochatown"],
     thingsToConsider: ["Lake levels vary seasonally, which can affect how close the dock sits to open water."],
+    reviews: [
+      {
+        tier: "scout",
+        score: 9.2,
+        reviewerLabel: "StayScout Editorial Team",
+        summary:
+          "The lodge backs directly onto a quiet cove on Broken Bow Lake, with its own covered dock for swimming or tying up a boat. Inside, a two-story stone fireplace anchors the great room, which sleeps a crowd across two floors.",
+        pros: ["Private covered dock", "Stone fireplace", "Hot tub"],
+        cons: ["Lake levels vary seasonally, which can affect how close the dock sits to open water."],
+      },
+      {
+        tier: "guest",
+        score: 9.0,
+        reviewerLabel: "130 verified guest reviews",
+        summary:
+          "Verified guests consistently highlight private covered dock and say the space over-delivers for fishing trips. Cleanliness and host communication come up often in the 130 reviews on file.",
+      },
+    ],
+
     featured: true,
     published: true,
     dateAdded: "2026-01-30",
     lastVerified: "2026-04-03",
     isSampleContent: true,
   },
-  {
+{
     id: "prop-009",
     slug: "desert-modern-retreat-scottsdale",
     title: "Desert Modern Retreat",
@@ -415,13 +567,32 @@ export const properties: Property[] = [
     priceLastChecked: "2026-05-15",
     nearbyAttractions: ["Camelback Mountain", "Old Town Scottsdale", "TPC Scottsdale"],
     thingsToConsider: ["Summer highs regularly exceed 105°F; the heated pool is most valuable November through March."],
+    reviews: [
+      {
+        tier: "scout",
+        score: 8.9,
+        reviewerLabel: "StayScout Editorial Team",
+        summary:
+          "Floor-to-ceiling glass runs along the back of the house, framing Camelback Mountain from the living room and the heated pool deck. It's a quieter residential pocket of Scottsdale, about ten minutes from Old Town.",
+        pros: ["Heated pool", "Mountain views", "Outdoor kitchen"],
+        cons: ["Summer highs regularly exceed 105°F; the heated pool is most valuable November through March."],
+      },
+      {
+        tier: "guest",
+        score: 8.7,
+        reviewerLabel: "31 verified guest reviews",
+        summary:
+          "Verified guests consistently highlight heated pool and say the space over-delivers for couples. Cleanliness and host communication come up often in the 31 reviews on file.",
+      },
+    ],
+
     featured: false,
     published: true,
     dateAdded: "2026-02-05",
     lastVerified: "2026-05-15",
     isSampleContent: true,
   },
-  {
+{
     id: "prop-010",
     slug: "tahoe-pines-lakeview-cabin",
     title: "Tahoe Pines Lakeview Cabin",
@@ -458,13 +629,32 @@ export const properties: Property[] = [
     priceLastChecked: "2026-03-27",
     nearbyAttractions: ["Lake Tahoe", "Palisades Tahoe", "Tahoe City"],
     thingsToConsider: ["Steep driveway; tire chains recommended for winter storms."],
+    reviews: [
+      {
+        tier: "scout",
+        score: 9.2,
+        reviewerLabel: "StayScout Editorial Team",
+        summary:
+          "The A-frame shape keeps the great room bright, and a wraparound deck catches glimpses of the lake through the pines. It works equally well as a summer paddleboard base or a winter ski trip anchor.",
+        pros: ["Partial lake view", "Wood stove", "Wraparound deck"],
+        cons: ["Steep driveway; tire chains recommended for winter storms."],
+      },
+      {
+        tier: "guest",
+        score: 8.9,
+        reviewerLabel: "52 verified guest reviews",
+        summary:
+          "Verified guests consistently highlight partial lake view and say the space over-delivers for couples. Cleanliness and host communication come up often in the 52 reviews on file.",
+      },
+    ],
+
     featured: true,
     published: true,
     dateAdded: "2026-02-11",
     lastVerified: "2026-03-27",
     isSampleContent: true,
   },
-  {
+{
     id: "prop-011",
     slug: "old-town-slopeside-park-city",
     title: "Old Town Slopeside Home",
@@ -501,13 +691,32 @@ export const properties: Property[] = [
     priceLastChecked: "2026-05-30",
     nearbyAttractions: ["Park City Mountain Resort", "Main Street", "Utah Olympic Park"],
     thingsToConsider: ["Street parking permits are required in Old Town during winter; the listing host provides details."],
+    reviews: [
+      {
+        tier: "scout",
+        score: 8.6,
+        reviewerLabel: "StayScout Editorial Team",
+        summary:
+          "The house sits on a quiet side street in Old Town, close enough to walk to Main Street restaurants but away from the foot traffic. A ski locker room off the entry keeps gear organized for a group.",
+        pros: ["Private hot tub", "Ski locker room", "Walk to Main Street"],
+        cons: ["Street parking permits are required in Old Town during winter; the listing host provides details."],
+      },
+      {
+        tier: "guest",
+        score: 8.2,
+        reviewerLabel: "93 verified guest reviews",
+        summary:
+          "Verified guests consistently highlight private hot tub and say the space over-delivers for ski trips. Cleanliness and host communication come up often in the 93 reviews on file.",
+      },
+    ],
+
     featured: false,
     published: true,
     dateAdded: "2026-02-18",
     lastVerified: "2026-05-30",
     isSampleContent: true,
   },
-  {
+{
     id: "prop-012",
     slug: "cape-cod-shingled-classic",
     title: "Cape Cod Shingled Classic",
@@ -544,13 +753,32 @@ export const properties: Property[] = [
     priceLastChecked: "2026-06-05",
     nearbyAttractions: ["Chatham Lighthouse", "Chatham Harbor", "Nauset Beach"],
     thingsToConsider: ["Peak summer weeks (July–August) often require a Saturday-to-Saturday booking."],
+    reviews: [
+      {
+        tier: "scout",
+        score: 9.3,
+        reviewerLabel: "StayScout Editorial Team",
+        summary:
+          "This is the shingled-cottage-with-white-trim look people picture when they think of Cape Cod, updated inside with a bright, modern kitchen. The fenced backyard is a genuine plus for families traveling with young kids or a dog.",
+        pros: ["Fenced yard", "Outdoor shower", "Grill"],
+        cons: ["Peak summer weeks (July–August) often require a Saturday-to-Saturday booking."],
+      },
+      {
+        tier: "guest",
+        score: 8.9,
+        reviewerLabel: "149 verified guest reviews",
+        summary:
+          "Verified guests consistently highlight fenced yard and say the space over-delivers for families. Cleanliness and host communication come up often in the 149 reviews on file.",
+      },
+    ],
+
     featured: true,
     published: true,
     dateAdded: "2026-02-25",
     lastVerified: "2026-06-05",
     isSampleContent: true,
   },
-  {
+{
     id: "prop-013",
     slug: "harborview-widows-walk-cape-cod",
     title: "Harborview Widow's Walk",
@@ -588,13 +816,32 @@ export const properties: Property[] = [
     priceLastChecked: "2026-05-22",
     nearbyAttractions: ["Pleasant Bay", "Chatham Fish Pier", "Monomoy National Wildlife Refuge"],
     thingsToConsider: ["Narrow historic staircase to the widow's walk — worth noting for anyone with mobility concerns."],
+    reviews: [
+      {
+        tier: "scout",
+        score: 8.7,
+        reviewerLabel: "StayScout Editorial Team",
+        summary:
+          "The rooftop widow's walk is the reason to book this one — a private, elevated deck with open water views that's rare even among Cape Cod's historic sea captain homes.",
+        pros: ["Rooftop widow's walk", "Water views", "Fireplace"],
+        cons: ["Narrow historic staircase to the widow's walk — worth noting for anyone with mobility concerns."],
+      },
+      {
+        tier: "guest",
+        score: 8.5,
+        reviewerLabel: "45 verified guest reviews",
+        summary:
+          "Verified guests consistently highlight rooftop widow's walk and say the space over-delivers for couples. Cleanliness and host communication come up often in the 45 reviews on file.",
+      },
+    ],
+
     featured: false,
     published: true,
     dateAdded: "2026-03-01",
     lastVerified: "2026-05-22",
     isSampleContent: true,
   },
-  {
+{
     id: "prop-014",
     slug: "treehouse-canopy-retreat-blue-ridge",
     title: "Canopy Treehouse Retreat",
@@ -631,6 +878,25 @@ export const properties: Property[] = [
     priceLastChecked: "2026-04-18",
     nearbyAttractions: ["Blue Ridge Lake", "Aska Adventure Area", "Downtown Blue Ridge"],
     thingsToConsider: ["Not accessible for guests unable to cross a suspension bridge or climb stairs."],
+    reviews: [
+      {
+        tier: "scout",
+        score: 8.6,
+        reviewerLabel: "StayScout Editorial Team",
+        summary:
+          "Reaching the front door means crossing a short suspension bridge through the tree canopy — a novelty that photographs well but also functions as a genuinely comfortable one-bedroom stay with a kitchenette and a soaking tub.",
+        pros: ["Suspension bridge entry", "Soaking tub", "Kitchenette"],
+        cons: ["Not accessible for guests unable to cross a suspension bridge or climb stairs."],
+      },
+      {
+        tier: "guest",
+        score: 8.3,
+        reviewerLabel: "62 verified guest reviews",
+        summary:
+          "Verified guests consistently highlight suspension bridge entry and say the space over-delivers for couples. Cleanliness and host communication come up often in the 62 reviews on file.",
+      },
+    ],
+
     featured: false,
     published: true,
     dateAdded: "2026-03-05",

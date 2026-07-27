@@ -14,6 +14,13 @@
   --color-terracotta: #ff385c; /* coral — the one accent color */
   --color-charcoal: #262223; /* body text */
   --color-border: #ededea;
+  /* Reserved for the Scout Stay editorial-review badge only — deliberately
+     not coral, so it reads as its own signal instead of blending into every
+     other coral CTA/accent on the page. 5.0:1 with white text. */
+  --color-gold: #b45309;
+  /* Reserved for the Guest-review badge — a cool neutral that pairs with
+     gold without competing with it. 10.4:1 with white text. */
+  --color-slate: #334155;
 
   --background: var(--color-ivory);
   --foreground: var(--color-charcoal);
@@ -27,6 +34,8 @@
   --color-terracotta: var(--color-terracotta);
   --color-charcoal: var(--color-charcoal);
   --color-border: var(--color-border);
+  --color-gold: var(--color-gold);
+  --color-slate: var(--color-slate);
 
   --font-serif: "Sora", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Public Sans", ui-sans-serif, system-ui, sans-serif;

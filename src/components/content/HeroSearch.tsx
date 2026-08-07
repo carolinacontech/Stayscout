@@ -20,10 +20,14 @@ const tripTypeOptions = [
   { label: "National Park Trips", value: "national-park-trips" },
 ];
 
-export function HeroSearch() {
+interface HeroSearchProps {
+  stayType: string;
+  onStayTypeChange: (value: string) => void;
+}
+
+export function HeroSearch({ stayType, onStayTypeChange }: HeroSearchProps) {
   const router = useRouter();
   const [destination, setDestination] = useState("");
-  const [stayType, setStayType] = useState("");
   const [tripType, setTripType] = useState("");
 
   function handleSubmit(event: FormEvent) {
@@ -54,7 +58,7 @@ export function HeroSearch() {
         label="Stay type"
         placeholder="Any stay type"
         value={stayType}
-        onChange={(e) => setStayType(e.target.value)}
+        onChange={(e) => onStayTypeChange(e.target.value)}
         options={stayTypes.map((s) => ({ label: s.name, value: s.slug }))}
       />
       <Select

@@ -9,7 +9,7 @@ import { getFeaturedGuide } from "@/data/guides";
 import { buildMetadata } from "@/lib/seo";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
-import { HeroSearch } from "@/components/content/HeroSearch";
+import { Hero } from "@/components/content/Hero";
 import { CollectionCard } from "@/components/content/CollectionCard";
 import { DestinationCard } from "@/components/content/DestinationCard";
 import { PropertyCard } from "@/components/content/PropertyCard";
@@ -49,42 +49,12 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="pb-6 pt-14 sm:pt-20">
-        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-          <span className="inline-block rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-terracotta shadow-sm">
-            Curated Stays Across America
-          </span>
-          <h1 className="mt-5 font-serif-heading text-4xl font-semibold text-navy sm:text-5xl lg:text-6xl">
-            {siteConfig.valueProposition}
-          </h1>
-          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-charcoal/70 sm:text-lg">
-            {siteConfig.supportingCopy}
-          </p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            <Button href="/stays" size="lg">
-              Explore Stays →
-            </Button>
-            <Button href="/destinations" variant="light" size="lg">
-              Browse Destinations
-            </Button>
-          </div>
-        </div>
-
-        <div className="mx-auto mt-10 max-w-4xl px-4 sm:px-6 lg:px-8">
-          <HeroSearch />
-        </div>
-        <div className="mx-auto mt-6 flex max-w-4xl flex-wrap justify-center gap-2 px-4 sm:px-6 lg:px-8">
-          {quickSearchLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="rounded-full border border-border bg-white px-4 py-2 text-sm font-medium text-navy hover:border-ocean hover:text-ocean"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </div>
-      </section>
+      <Hero
+        eyebrow="Curated Stays Across America"
+        valueProposition={siteConfig.valueProposition}
+        supportingCopy={siteConfig.supportingCopy}
+        quickSearchLinks={quickSearchLinks}
+      />
 
       {/* Featured collections */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">

@@ -10,7 +10,7 @@ export function DestinationCard({ destination }: DestinationCardProps) {
   return (
     <Link
       href={`/destinations/${destination.stateSlug}/${destination.slug}`}
-      className="group relative block aspect-[3/4] overflow-hidden rounded-lg bg-sand"
+      className="group relative block aspect-[3/4] overflow-hidden rounded-2xl bg-sand"
     >
       <Image
         src={destination.heroImage.src}

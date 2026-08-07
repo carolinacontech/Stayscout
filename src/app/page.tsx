@@ -49,46 +49,31 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative">
-        <div className="relative aspect-[4/5] w-full sm:aspect-[16/9] lg:aspect-[21/9]">
-          <Image
-            src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=2400&auto=format&fit=crop"
-            alt="Beach cottage with a private boardwalk to the sand on the Florida coast"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/30 to-navy/10" />
-        </div>
-        <div className="absolute inset-0 flex items-end">
-          <div className="mx-auto w-full max-w-7xl px-4 pb-10 sm:px-6 sm:pb-14 lg:px-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sand">
-              Curated Stays Across America
-            </p>
-            <h1 className="mt-3 max-w-2xl font-serif-heading text-4xl font-semibold text-white sm:text-5xl lg:text-6xl">
-              {siteConfig.valueProposition}
-            </h1>
-            <p className="mt-4 max-w-xl text-base leading-relaxed text-white/90 sm:text-lg">
-              {siteConfig.supportingCopy}
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Button href="/stays" size="lg">
-                Explore Stays
-              </Button>
-              <Button href="/destinations" variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-navy">
-                Browse Destinations
-              </Button>
-            </div>
+      <section className="pb-6 pt-14 sm:pt-20">
+        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+          <span className="inline-block rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-terracotta shadow-sm">
+            Curated Stays Across America
+          </span>
+          <h1 className="mt-5 font-serif-heading text-4xl font-semibold text-navy sm:text-5xl lg:text-6xl">
+            {siteConfig.valueProposition}
+          </h1>
+          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-charcoal/70 sm:text-lg">
+            {siteConfig.supportingCopy}
+          </p>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            <Button href="/stays" size="lg">
+              Explore Stays →
+            </Button>
+            <Button href="/destinations" variant="light" size="lg">
+              Browse Destinations
+            </Button>
           </div>
         </div>
-      </section>
 
-      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <div className="-mt-24 sm:-mt-16 lg:-mt-20 relative z-10">
+        <div className="mx-auto mt-10 max-w-4xl px-4 sm:px-6 lg:px-8">
           <HeroSearch />
         </div>
-        <div className="mt-6 flex flex-wrap gap-2">
+        <div className="mx-auto mt-6 flex max-w-4xl flex-wrap justify-center gap-2 px-4 sm:px-6 lg:px-8">
           {quickSearchLinks.map((link) => (
             <Link
               key={link.href}
@@ -99,7 +84,7 @@ export default function HomePage() {
             </Link>
           ))}
         </div>
-      </div>
+      </section>
 
       {/* Featured collections */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -164,7 +149,7 @@ export default function HomePage() {
               <Link
                 key={trip.href}
                 href={trip.href}
-                className="flex items-center justify-center rounded-lg border border-border bg-white px-4 py-6 text-center text-sm font-medium text-navy hover:border-ocean hover:text-ocean"
+                className="flex items-center justify-center rounded-xl border border-border bg-white px-4 py-6 text-center text-sm font-medium text-navy hover:border-ocean hover:text-ocean"
               >
                 {trip.label}
               </Link>
@@ -178,7 +163,7 @@ export default function HomePage() {
         <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionHeading eyebrow="From the Journal" title="Planning inspiration, from people who love this stuff." />
           <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
-            <div className="relative aspect-[16/10] overflow-hidden rounded-lg">
+            <div className="relative aspect-[16/10] overflow-hidden rounded-2xl">
               <Image
                 src={featuredGuide.heroImage.src}
                 alt={featuredGuide.heroImage.alt}
@@ -202,33 +187,39 @@ export default function HomePage() {
       )}
 
       {/* Email signup */}
-      <section className="border-y border-border py-16">
-        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="font-serif-heading text-3xl font-semibold text-navy sm:text-4xl">
-            A better getaway starts here.
-          </h2>
-          <p className="mx-auto mt-3 max-w-xl text-base text-charcoal/70">
-            Get standout stays, destination guides, and fresh weekend ideas delivered to your inbox.
-          </p>
-          <div className="mx-auto mt-8 max-w-xl text-left">
-            <NewsletterForm />
+      <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div className="overflow-hidden rounded-2xl bg-gradient-to-r from-terracotta to-[#f2a65a] px-6 py-10 sm:px-12 sm:py-14">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+            <div className="max-w-lg">
+              <h2 className="font-serif-heading text-3xl font-semibold text-white sm:text-4xl">
+                A better getaway starts here.
+              </h2>
+              <p className="mt-3 text-base text-white/90">
+                Get standout stays, destination guides, and fresh weekend ideas delivered to your inbox.
+              </p>
+            </div>
+            <div className="w-full lg:max-w-md">
+              <NewsletterForm />
+              <p className="mt-3 text-xs text-white/75">
+                We&apos;ll only send travel inspiration — no spam, unsubscribe anytime.
+              </p>
+            </div>
           </div>
-          <p className="mt-4 text-xs text-charcoal/50">
-            We&apos;ll only send travel inspiration — no spam, unsubscribe anytime.
-          </p>
         </div>
       </section>
 
       {/* Why trust us */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <SectionHeading align="center" eyebrow="Why Trust Us" title="Fewer, better recommendations." />
-        <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {siteConfig.trustPrinciples.map((principle) => (
-            <div key={principle.title} className="text-center">
-              <h3 className="text-lg font-semibold text-navy">{principle.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-charcoal/75">{principle.description}</p>
-            </div>
-          ))}
+        <div className="mt-10 rounded-2xl bg-white p-8 shadow-sm sm:p-10">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {siteConfig.trustPrinciples.map((principle) => (
+              <div key={principle.title} className="text-center">
+                <h3 className="text-lg font-semibold text-navy">{principle.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-charcoal/75">{principle.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
         <div className="mx-auto mt-10 max-w-2xl">
           <AffiliateDisclosure variant="long" className="justify-center text-center" />

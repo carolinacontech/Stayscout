@@ -14,7 +14,7 @@ export function PropertyCard({ property }: PropertyCardProps) {
   const scoutReview = property.reviews?.find((r) => r.tier === "scout");
 
   return (
-    <article className="group flex flex-col overflow-hidden rounded-lg border border-border bg-white transition-shadow hover:shadow-md">
+    <article className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-white transition-shadow hover:shadow-md">
       <Link href={`/stays/${property.slug}`} className="relative block aspect-[4/3] overflow-hidden bg-sand">
         {image && (
           <Image
@@ -25,9 +25,9 @@ export function PropertyCard({ property }: PropertyCardProps) {
             className="object-cover transition-transform duration-300 group-hover:scale-105"
           />
         )}
-        {property.isSampleContent && (
-          <span className="absolute left-3 top-3 rounded-full bg-navy/85 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-white">
-            Demo listing
+        {property.featured && (
+          <span className="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-terracotta shadow-sm">
+            Editor&apos;s pick
           </span>
         )}
         {scoutReview && (
@@ -37,6 +37,11 @@ export function PropertyCard({ property }: PropertyCardProps) {
             compact
             className="absolute right-3 top-3 shadow-sm"
           />
+        )}
+        {property.isSampleContent && (
+          <span className="absolute bottom-3 left-3 rounded-full bg-navy/85 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-white">
+            Demo listing
+          </span>
         )}
       </Link>
       <div className="flex flex-1 flex-col gap-3 p-4">

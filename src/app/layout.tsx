@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Sora, Public_Sans } from "next/font/google";
+import { Fraunces, Public_Sans } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/data/siteConfig";
 import { organizationSchema, websiteSchema, jsonLdScript } from "@/lib/schema";
@@ -7,10 +7,10 @@ import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
-const sora = Sora({
+const fraunces = Fraunces({
   variable: "--font-serif",
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
+  weight: ["600", "700"],
   display: "swap",
 });
 
@@ -47,7 +47,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${sora.variable} ${publicSans.variable}`}>
+    <html lang="en" className={`${fraunces.variable} ${publicSans.variable}`}>
       <head>
         <link rel="preconnect" href="https://images.unsplash.com" />
       </head>

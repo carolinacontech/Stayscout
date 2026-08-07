@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Users, BedDouble, Bath } from "lucide-react";
 import type { Property } from "@/data/types";
 import { Badge } from "@/components/ui/Badge";
+import { ReviewBadge } from "@/components/ui/ReviewBadge";
 
 interface PropertyCardProps {
   property: Property;
@@ -10,9 +11,10 @@ interface PropertyCardProps {
 
 export function PropertyCard({ property }: PropertyCardProps) {
   const image = property.images[0];
+  const scoutReview = property.reviews?.find((r) => r.tier === "scout");
 
   return (
-    <article className="group flex flex-col overflow-hidden rounded-lg border border-border bg-white transition-shadow hover:shadow-md">
+    <article className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-white transition-shadow hover:shadow-md">
       <Link href={`/stays/${property.slug}`} className="relative block aspect-[4/3] overflow-hidden bg-sand">
         {image && (
           <Image
@@ -23,8 +25,21 @@ export function PropertyCard({ property }: PropertyCardProps) {
             className="object-cover transition-transform duration-300 group-hover:scale-105"
           />
         )}
+        {property.featured && (
+          <span className="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-terracotta shadow-sm">
+            Editor&apos;s pick
+          </span>
+        )}
+        {scoutReview && (
+          <ReviewBadge
+            tier="scout"
+            score={scoutReview.score}
+            compact
+            className="absolute right-3 top-3 shadow-sm"
+          />
+        )}
         {property.isSampleContent && (
-          <span className="absolute left-3 top-3 rounded-full bg-navy/85 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-white">
+          <span className="absolute bottom-3 left-3 rounded-full bg-navy/85 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-white">
             Demo listing
           </span>
         )}
@@ -61,7 +76,7 @@ export function PropertyCard({ property }: PropertyCardProps) {
 
         <div className="mt-auto flex items-center justify-between pt-2">
           {property.approximatePriceFrom ? (
-            <p className="text-sm font-medium text-charcoal">
+            <p className="tabular-nums text-sm font-medium text-charcoal">
               From ${property.approximatePriceFrom}
               <span className="text-charcoal/60">/night*</span>
             </p>

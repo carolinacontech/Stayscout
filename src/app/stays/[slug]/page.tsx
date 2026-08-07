@@ -9,6 +9,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Badge } from "@/components/ui/Badge";
 import { ImageGallery } from "@/components/content/ImageGallery";
 import { AmenityList } from "@/components/content/AmenityList";
+import { PropertyReviews } from "@/components/content/PropertyReviews";
 import { RelatedStays } from "@/components/content/RelatedStays";
 import { AffiliateDisclosure } from "@/components/ui/AffiliateDisclosure";
 import { BookingButton } from "@/components/content/BookingButton";
@@ -109,6 +110,10 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
             <h2 className="text-xl font-semibold text-navy">Why we picked it</h2>
             <p className="mt-3 text-base leading-relaxed text-charcoal/80">{property.whyWePickedIt}</p>
           </section>
+
+          {property.reviews && property.reviews.length > 0 && (
+            <PropertyReviews reviews={property.reviews} />
+          )}
 
           <section>
             <h2 className="text-xl font-semibold text-navy">Best for</h2>

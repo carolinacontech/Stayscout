@@ -11,7 +11,7 @@ export function CollectionCard({ collection, count }: CollectionCardProps) {
   return (
     <Link
       href={`/stays?category=${collection.categories[0]}`}
-      className="group flex flex-col overflow-hidden rounded-lg border border-border bg-white transition-shadow hover:shadow-md"
+      className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-white transition-shadow hover:shadow-md"
     >
       <div className="relative aspect-[16/10] overflow-hidden bg-sand">
         <Image

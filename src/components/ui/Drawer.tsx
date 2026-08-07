@@ -36,7 +36,7 @@ export function Drawer({ isOpen, onClose, title, children, side = "right" }: Dra
         aria-modal="true"
         aria-label={title}
         className={cn(
-          "relative z-10 flex h-full w-full max-w-sm flex-col overflow-y-auto bg-white p-6 shadow-xl",
+          "relative z-10 flex h-full w-full max-w-sm flex-col overflow-y-auto overscroll-contain bg-white p-6 shadow-xl",
           side === "right" ? "ml-auto" : "mr-auto"
         )}
       >

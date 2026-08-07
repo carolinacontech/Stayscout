@@ -42,7 +42,7 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
         aria-modal="true"
         aria-labelledby="modal-title"
         tabIndex={-1}
-        className="relative z-10 max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-lg bg-white p-6 shadow-xl focus:outline-none"
+        className="relative z-10 max-h-[90vh] w-full max-w-lg overflow-y-auto overscroll-contain rounded-lg bg-white p-6 shadow-xl focus:outline-none"
       >
         <div className="mb-4 flex items-center justify-between">
           <h2 id="modal-title" className="text-xl font-semibold text-navy">

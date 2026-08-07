@@ -131,12 +131,12 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
           </div>
         )}
 
-        <div className="mt-14 rounded-lg bg-navy p-8 text-center">
+        <div className="mt-14 rounded-2xl bg-gradient-to-r from-terracotta to-[#f2a65a] p-8 text-center">
           <h2 className="font-serif-heading text-2xl font-semibold text-white">A better getaway starts here.</h2>
-          <p className="mx-auto mt-2 max-w-md text-sm text-white/80">
+          <p className="mx-auto mt-2 max-w-md text-sm text-white/90">
             Get standout stays, destination guides, and fresh weekend ideas delivered to your inbox.
           </p>
-          <div className="mx-auto mt-6 max-w-lg text-left">
+          <div className="mx-auto mt-6 max-w-md text-left">
             <NewsletterForm />
           </div>
         </div>

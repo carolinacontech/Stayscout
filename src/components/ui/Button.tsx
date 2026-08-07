@@ -2,14 +2,15 @@ import Link from "next/link";
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
 import { cn } from "@/lib/cn";
 
-type Variant = "primary" | "secondary" | "outline" | "ghost";
+type Variant = "primary" | "secondary" | "outline" | "ghost" | "light";
 type Size = "sm" | "md" | "lg";
 
 const variantClasses: Record<Variant, string> = {
-  primary: "bg-terracotta text-white hover:bg-[#b25a3c] focus-visible:outline-terracotta",
-  secondary: "bg-navy text-white hover:bg-[#0d1d2c] focus-visible:outline-navy",
+  primary: "bg-terracotta text-white hover:bg-ocean focus-visible:outline-terracotta",
+  secondary: "bg-navy text-white hover:bg-navy/85 focus-visible:outline-navy",
   outline: "border border-navy text-navy hover:bg-navy hover:text-white",
   ghost: "text-navy hover:bg-sand/60",
+  light: "bg-white text-navy shadow-sm hover:bg-sand focus-visible:outline-navy",
 };
 
 const sizeClasses: Record<Size, string> = {
@@ -19,7 +20,7 @@ const sizeClasses: Record<Size, string> = {
 };
 
 const baseClasses =
-  "inline-flex items-center justify-center gap-2 rounded-md font-medium tracking-wide transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-50";
+  "inline-flex items-center justify-center gap-2 rounded-full font-medium tracking-wide transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-50";
 
 interface CommonProps {
   variant?: Variant;

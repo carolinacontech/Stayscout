@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
+import { Search } from "lucide-react";
 import { Select } from "@/components/ui/Select";
 import { Button } from "@/components/ui/Button";
 import { usStates } from "@/data/usStates";
@@ -38,7 +39,7 @@ export function HeroSearch() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="grid grid-cols-1 gap-3 rounded-lg bg-white/95 p-4 shadow-lg sm:grid-cols-4 sm:items-end sm:gap-4 sm:p-5"
+      className="grid grid-cols-1 gap-3 rounded-3xl bg-white p-4 shadow-xl sm:grid-cols-4 sm:items-end sm:gap-4 sm:p-5"
     >
       <Select
         id="hero-destination"
@@ -65,7 +66,8 @@ export function HeroSearch() {
         options={tripTypeOptions}
       />
       <Button type="submit" size="md" className="w-full sm:w-auto">
-        Search Stays
+        <Search className="h-4 w-4" aria-hidden="true" />
+        Search
       </Button>
     </form>
   );

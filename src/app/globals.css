@@ -1,13 +1,26 @@
 @import "tailwindcss";
 
+/*
+ * StayScout USA — "cálida" (warm) theme.
+ * Token names (navy, terracotta, ocean, sand, ivory, charcoal, border) are
+ * kept stable so every component built against them updates automatically;
+ * only the underlying values changed when the visual direction did.
+ */
 :root {
-  --color-navy: #12263a;
-  --color-ivory: #f7f3ec;
-  --color-sand: #e8ddcf;
-  --color-ocean: #467c8c;
-  --color-terracotta: #c66a4a;
-  --color-charcoal: #252525;
-  --color-border: #e5e2dc;
+  --color-navy: #3a2b24; /* warm ink — dark UI surfaces & heading text */
+  --color-ivory: #fff1e6; /* peach — page background */
+  --color-sand: #fce3ce; /* deeper peach — light neutral surface / badge fill */
+  --color-ocean: #e8434a; /* deepened coral — hover/focus state */
+  --color-terracotta: #ff5a5f; /* coral — the one accent color */
+  --color-charcoal: #3a2b24; /* body text */
+  --color-border: #f0dbc3;
+  /* Reserved for the Scout Stay editorial-review badge only — deliberately
+     not coral, so it reads as its own signal instead of blending into every
+     other coral CTA/accent on the page. 5.0:1 with white text. */
+  --color-gold: #b45309;
+  /* Reserved for the Guest-review badge — a cool neutral that pairs with
+     gold without competing with it. 10.4:1 with white text. */
+  --color-slate: #334155;
 
   --background: var(--color-ivory);
   --foreground: var(--color-charcoal);
@@ -21,9 +34,11 @@
   --color-terracotta: var(--color-terracotta);
   --color-charcoal: var(--color-charcoal);
   --color-border: var(--color-border);
+  --color-gold: var(--color-gold);
+  --color-slate: var(--color-slate);
 
-  --font-serif: "Playfair Display", "Cormorant Garamond", Georgia, serif;
-  --font-sans: "Inter", "DM Sans", system-ui, sans-serif;
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-sans: "Public Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
 html {
@@ -56,11 +71,30 @@ h3,
 h4,
 .font-serif-heading {
   font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  /* Fraunces renders "&" as an unusual swash glyph with its default OpenType
+     features — disable discretionary ligatures/swashes so headings stay
+     predictable regardless of copy. */
+  font-variant-ligatures: no-discretionary-ligatures no-historical-ligatures;
+  font-feature-settings: "dlig" 0, "hlig" 0, "swsh" 0, "salt" 0;
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-ocean);
+  outline: 2px solid var(--color-terracotta);
   outline-offset: 2px;
+}
+
+a,
+button,
+[role="button"] {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
 }
 
 .line-clamp-2 {

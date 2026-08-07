@@ -17,7 +17,11 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="flex items-center gap-3 rounded-md bg-sand/60 px-5 py-4 text-navy">
+      <div
+        role="status"
+        aria-live="polite"
+        className="flex items-center gap-3 rounded-md bg-sand/60 px-5 py-4 text-navy"
+      >
         <CheckCircle2 className="h-5 w-5 shrink-0" aria-hidden="true" />
         <p className="text-sm">Thanks for reaching out — we&apos;ll get back to you soon.</p>
       </div>
@@ -26,8 +30,16 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-      <Input id="contact-name" label="Name" name="name" required />
-      <Input id="contact-email" label="Email address" type="email" name="email" required />
+      <Input id="contact-name" label="Name" name="name" autoComplete="name" required />
+      <Input
+        id="contact-email"
+        label="Email address"
+        type="email"
+        name="email"
+        autoComplete="email"
+        spellCheck={false}
+        required
+      />
       <div className="flex flex-col gap-1.5">
         <label htmlFor="contact-message" className="text-sm font-medium text-charcoal">
           Message

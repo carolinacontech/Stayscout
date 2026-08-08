@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Public_Sans } from "next/font/google";
+import { Fraunces, Public_Sans, Fredoka } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/data/siteConfig";
 import { organizationSchema, websiteSchema, jsonLdScript } from "@/lib/schema";
@@ -17,6 +17,13 @@ const fraunces = Fraunces({
 const publicSans = Public_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const fredoka = Fredoka({
+  variable: "--font-logo",
+  subsets: ["latin"],
+  weight: ["600", "700"],
   display: "swap",
 });
 
@@ -47,7 +54,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${publicSans.variable}`}>
+    <html lang="en" className={`${fraunces.variable} ${publicSans.variable} ${fredoka.variable}`}>
       <head>
         <link rel="preconnect" href="https://images.unsplash.com" />
       </head>

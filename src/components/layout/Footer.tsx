@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Instagram, Facebook } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
 import { AffiliateDisclosure } from "@/components/ui/AffiliateDisclosure";
+import { Logo } from "@/components/ui/Logo";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -11,7 +12,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-10 sm:grid-cols-4">
           <div className="col-span-2 sm:col-span-4 lg:col-span-1">
-            <p className="font-serif-heading text-xl font-semibold text-navy">{siteConfig.brandName}</p>
+            <Logo iconClassName="h-7 w-7" textClassName="text-xl" />
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-charcoal/70">{siteConfig.footer.brandSummary}</p>
             <div className="mt-4 flex gap-3">
               <a

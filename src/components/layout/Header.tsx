@@ -31,7 +31,7 @@ export function Header() {
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-        <Logo iconClassName="h-7 w-7 sm:h-8 sm:w-8" textClassName="text-xl sm:text-2xl" />
+        <Logo imageClassName="h-8 w-auto sm:h-9" />
 
         <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex">
           {siteConfig.primaryNav.map((item) => (

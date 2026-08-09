@@ -39,8 +39,6 @@
 
   --font-serif: "Fraunces", Georgia, serif;
   --font-sans: "Public Sans", ui-sans-serif, system-ui, sans-serif;
-  /* Logo wordmark only — never used for body copy or headings. */
-  --font-logo: "Fredoka", ui-rounded, sans-serif;
 }
 
 html {

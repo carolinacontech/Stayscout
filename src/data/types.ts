@@ -58,6 +58,20 @@ export type TripType =
 
 export type LinkStatus = "active" | "needs-review" | "unavailable";
 
+export type Month =
+  | "January"
+  | "February"
+  | "March"
+  | "April"
+  | "May"
+  | "June"
+  | "July"
+  | "August"
+  | "September"
+  | "October"
+  | "November"
+  | "December";
+
 export interface PropertyImage {
   src: string;
   alt: string;
@@ -125,6 +139,9 @@ export interface Property {
   thingsToConsider: string[];
   /** Omit entirely until at least one tier of review exists — don't render an empty section. */
   reviews?: PropertyReview[];
+  /** One or more months this specific stay is at its best — weather, price, or crowd-driven. */
+  bestMonths?: Month[];
+  bestMonthsReason?: string;
   featured: boolean;
   published: boolean;
   dateAdded: string;

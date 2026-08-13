@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
 import { Search } from "lucide-react";
 import { Select } from "@/components/ui/Select";
+import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import { usStates } from "@/data/usStates";
 import { stayTypes } from "@/data/stayTypes";
@@ -29,6 +30,8 @@ export function HeroSearch({ stayType, onStayTypeChange }: HeroSearchProps) {
   const router = useRouter();
   const [destination, setDestination] = useState("");
   const [tripType, setTripType] = useState("");
+  const [checkIn, setCheckIn] = useState("");
+  const [checkOut, setCheckOut] = useState("");
 
   function handleSubmit(event: FormEvent) {
     event.preventDefault();
@@ -37,13 +40,15 @@ export function HeroSearch({ stayType, onStayTypeChange }: HeroSearchProps) {
     if (destination) params.set("state", destination);
     if (stayType) params.set("type", stayType);
     if (tripType) params.set("trip", tripType);
+    if (checkIn) params.set("checkIn", checkIn);
+    if (checkOut) params.set("checkOut", checkOut);
     router.push(`/stays${params.toString() ? `?${params.toString()}` : ""}`);
   }
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="grid grid-cols-1 gap-3 rounded-3xl bg-white p-4 shadow-xl sm:grid-cols-4 sm:items-end sm:gap-4 sm:p-5"
+      className="grid grid-cols-1 gap-3 rounded-3xl bg-white p-4 shadow-xl sm:grid-cols-3 sm:items-end sm:gap-4 sm:p-5"
     >
       <Select
         id="hero-destination"
@@ -69,7 +74,25 @@ export function HeroSearch({ stayType, onStayTypeChange }: HeroSearchProps) {
         onChange={(e) => setTripType(e.target.value)}
         options={tripTypeOptions}
       />
-      <Button type="submit" size="md" className="w-full sm:w-auto">
+      <Input
+        id="hero-check-in"
+        label="Check-in"
+        type="date"
+        value={checkIn}
+        onChange={(e) => {
+          setCheckIn(e.target.value);
+          if (checkOut && e.target.value > checkOut) setCheckOut("");
+        }}
+      />
+      <Input
+        id="hero-check-out"
+        label="Check-out"
+        type="date"
+        value={checkOut}
+        min={checkIn || undefined}
+        onChange={(e) => setCheckOut(e.target.value)}
+      />
+      <Button type="submit" size="md" className="w-full">
         <Search className="h-4 w-4" aria-hidden="true" />
         Search
       </Button>

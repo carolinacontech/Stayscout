@@ -30,8 +30,8 @@ export function Header() {
         isScrolled && "border-border shadow-sm"
       )}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-        <Logo imageClassName="h-11 w-auto sm:h-14" />
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+        <Logo imageClassName="h-14 w-auto sm:h-20" />
 
         <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex">
           {siteConfig.primaryNav.map((item) => (

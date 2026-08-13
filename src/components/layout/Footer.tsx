@@ -12,7 +12,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-10 sm:grid-cols-4">
           <div className="col-span-2 sm:col-span-4 lg:col-span-1">
-            <Logo imageClassName="h-9 w-auto" />
+            <Logo imageClassName="h-11 w-auto" />
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-charcoal/70">{siteConfig.footer.brandSummary}</p>
             <div className="mt-4 flex gap-3">
               <a

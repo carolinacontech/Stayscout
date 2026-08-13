@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Users, BedDouble, Bath } from "lucide-react";
+import { Users, BedDouble, Bath, CalendarDays } from "lucide-react";
 import type { Property } from "@/data/types";
 import { Badge } from "@/components/ui/Badge";
 import { ReviewBadge } from "@/components/ui/ReviewBadge";
+import { formatMonths } from "@/lib/months";
 
 interface PropertyCardProps {
   property: Property;
@@ -73,6 +74,13 @@ export function PropertyCard({ property }: PropertyCardProps) {
             <Bath className="h-3.5 w-3.5" aria-hidden="true" /> {property.bathrooms} bath
           </span>
         </div>
+
+        {property.bestMonths && property.bestMonths.length > 0 && (
+          <p className="flex items-center gap-1 text-xs text-charcoal/70">
+            <CalendarDays className="h-3.5 w-3.5 shrink-0 text-terracotta" aria-hidden="true" />
+            Best in {formatMonths(property.bestMonths, "short")}
+          </p>
+        )}
 
         <div className="mt-auto flex items-center justify-between pt-2">
           {property.approximatePriceFrom ? (

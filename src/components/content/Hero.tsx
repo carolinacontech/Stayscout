@@ -2,15 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { HeroSearch } from "@/components/content/HeroSearch";
 import { stayTypes } from "@/data/stayTypes";
-
-interface HeroImage {
-  src: string;
-  alt: string;
-}
 
 interface HeroProps {
   eyebrow: string;
@@ -19,55 +14,21 @@ interface HeroProps {
   quickSearchLinks: { label: string; href: string }[];
 }
 
-type Layers = [HeroImage | null, HeroImage | null];
-
 export function Hero({ eyebrow, valueProposition, supportingCopy, quickSearchLinks }: HeroProps) {
   const [stayType, setStayType] = useState("");
   const targetImage = stayTypes.find((s) => s.slug === stayType)?.heroImage ?? null;
-  const targetSrc = targetImage?.src ?? null;
-
-  const [layers, setLayers] = useState<Layers>([null, null]);
-  const [activeLayer, setActiveLayer] = useState<0 | 1>(0);
-  const [pendingLayer, setPendingLayer] = useState<0 | 1 | null>(null);
-
-  // Mount the new image into the inactive layer (at opacity 0) during render,
-  // following React's render-time state-sync pattern. The actual crossfade —
-  // flipping which layer is opacity-100 — waits a paint via the effect below,
-  // so the browser has something to transition *from*.
-  const currentSrc = layers[activeLayer]?.src ?? null;
-  if (targetSrc !== currentSrc && pendingLayer === null) {
-    const nextLayer = activeLayer === 0 ? 1 : 0;
-    const newLayers: Layers = [...layers];
-    newLayers[nextLayer] = targetImage;
-    setLayers(newLayers);
-    setPendingLayer(nextLayer);
-  }
-
-  useEffect(() => {
-    if (pendingLayer === null) return;
-    const raf = requestAnimationFrame(() => {
-      setActiveLayer(pendingLayer);
-      setPendingLayer(null);
-    });
-    return () => cancelAnimationFrame(raf);
-  }, [pendingLayer]);
-
   const hasPhoto = Boolean(targetImage);
 
   return (
     <section className="relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-ivory">
-        {layers.map((layer, i) =>
-          layer ? (
-            <div
-              key={i}
-              className={`absolute inset-0 transition-opacity duration-700 ease-out ${
-                i === activeLayer ? "opacity-100" : "opacity-0"
-              }`}
-            >
-              <Image src={layer.src} alt="" fill sizes="100vw" className="object-cover" />
-            </div>
-          ) : null
+        {targetImage && (
+          // Keying on the image src forces a fresh mount on every change, so the
+          // fade-in animation (globals.css) always restarts cleanly — no manual
+          // opacity state machine to keep in sync.
+          <div key={targetImage.src} className="absolute inset-0 animate-hero-fade-in">
+            <Image src={targetImage.src} alt="" fill sizes="100vw" className="object-cover" />
+          </div>
         )}
       </div>
 
@@ -99,7 +60,7 @@ export function Hero({ eyebrow, valueProposition, supportingCopy, quickSearchLin
             </div>
           </div>
 
-          <div className="mx-auto mt-10 max-w-3xl">
+          <div className="mx-auto mt-10 max-w-2xl">
             <HeroSearch stayType={stayType} onStayTypeChange={setStayType} />
           </div>
           <div className="mx-auto mt-6 flex max-w-3xl flex-wrap justify-center gap-2">

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Users, BedDouble, Bath, Home, MapPin } from "lucide-react";
+import { Users, BedDouble, Bath, Home, MapPin, CalendarDays } from "lucide-react";
 import { properties, getPropertyBySlug, getRelatedProperties } from "@/data/properties";
 import { siteConfig } from "@/data/siteConfig";
 import { buildMetadata } from "@/lib/seo";
@@ -125,6 +125,27 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
               ))}
             </div>
           </section>
+
+          {property.bestMonths && property.bestMonths.length > 0 && (
+            <section>
+              <h2 className="text-xl font-semibold text-navy">Best time to visit</h2>
+              <div className="mt-3 flex items-center gap-3 rounded-lg border border-border bg-white p-4">
+                <CalendarDays className="h-5 w-5 shrink-0 text-terracotta" aria-hidden="true" />
+                <div>
+                  <div className="flex flex-wrap gap-1.5">
+                    {property.bestMonths.map((month) => (
+                      <Badge key={month} tone="terracotta">
+                        {month}
+                      </Badge>
+                    ))}
+                  </div>
+                  {property.bestMonthsReason && (
+                    <p className="mt-2 text-sm text-charcoal/75">{property.bestMonthsReason}</p>
+                  )}
+                </div>
+              </div>
+            </section>
+          )}
 
           <section>
             <h2 className="text-xl font-semibold text-navy">Amenities</h2>

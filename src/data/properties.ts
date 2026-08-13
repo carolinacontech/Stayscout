@@ -78,6 +78,10 @@ export const properties: Property[] = [
       },
     ],
 
+    bestMonths: ["June", "September"],
+    bestMonthsReason:
+      "Warm Gulf water without the July/August crowds or peak-season pricing.",
+
     featured: true,
     published: true,
     dateAdded: "2026-01-15",
@@ -147,6 +151,10 @@ export const properties: Property[] = [
       },
     ],
 
+    bestMonths: ["March", "April"],
+    bestMonthsReason:
+      "Dry season in the Keys, ahead of summer humidity and hurricane risk.",
+
     featured: true,
     published: true,
     dateAdded: "2026-01-20",
@@ -209,6 +217,10 @@ export const properties: Property[] = [
           "Verified guests consistently highlight beach access two doors down and say the space over-delivers for couples. Cleanliness and host communication come up often in the 39 reviews on file.",
       },
     ],
+
+    bestMonths: ["May", "October"],
+    bestMonthsReason:
+      "Warm Gulf water on either side of the busy summer stretch.",
 
     featured: false,
     published: true,
@@ -274,6 +286,10 @@ export const properties: Property[] = [
       },
     ],
 
+    bestMonths: ["October"],
+    bestMonthsReason:
+      "Peak fall foliage across the Smokies, best seen from the ridge.",
+
     featured: true,
     published: true,
     dateAdded: "2026-01-10",
@@ -335,6 +351,10 @@ export const properties: Property[] = [
           "Verified guests consistently highlight ridge-view deck and say the space over-delivers for couples. Cleanliness and host communication come up often in the 57 reviews on file.",
       },
     ],
+
+    bestMonths: ["June", "October"],
+    bestMonthsReason:
+      "Mild hiking weather in early summer, then fall color in October.",
 
     featured: false,
     published: true,
@@ -399,6 +419,10 @@ export const properties: Property[] = [
       },
     ],
 
+    bestMonths: ["June", "September"],
+    bestMonthsReason:
+      "Warm water and lighter crowds than the July/August peak.",
+
     featured: true,
     published: true,
     dateAdded: "2026-01-25",
@@ -460,6 +484,10 @@ export const properties: Property[] = [
           "Verified guests consistently highlight private courtyard entrance and say the space over-delivers for couples. Cleanliness and host communication come up often in the 35 reviews on file.",
       },
     ],
+
+    bestMonths: ["April", "May", "October"],
+    bestMonthsReason:
+      "Mild temperatures and gardens in bloom, before and after summer humidity sets in.",
 
     featured: false,
     published: true,
@@ -524,6 +552,10 @@ export const properties: Property[] = [
       },
     ],
 
+    bestMonths: ["May", "September"],
+    bestMonthsReason:
+      "Warm lake water with cooler evenings than the height of summer.",
+
     featured: true,
     published: true,
     dateAdded: "2026-01-30",
@@ -585,6 +617,10 @@ export const properties: Property[] = [
           "Verified guests consistently highlight heated pool and say the space over-delivers for couples. Cleanliness and host communication come up often in the 31 reviews on file.",
       },
     ],
+
+    bestMonths: ["February", "March"],
+    bestMonthsReason:
+      "Comfortable desert temperatures before the summer heat arrives.",
 
     featured: false,
     published: true,
@@ -648,6 +684,10 @@ export const properties: Property[] = [
       },
     ],
 
+    bestMonths: ["July", "August"],
+    bestMonthsReason:
+      "Peak lake season for swimming, paddling, and boating.",
+
     featured: true,
     published: true,
     dateAdded: "2026-02-11",
@@ -710,6 +750,10 @@ export const properties: Property[] = [
       },
     ],
 
+    bestMonths: ["January", "February"],
+    bestMonthsReason:
+      "Deepest snowpack of the season for ski-in, ski-out access.",
+
     featured: false,
     published: true,
     dateAdded: "2026-02-18",
@@ -771,6 +815,10 @@ export const properties: Property[] = [
           "Verified guests consistently highlight fenced yard and say the space over-delivers for families. Cleanliness and host communication come up often in the 149 reviews on file.",
       },
     ],
+
+    bestMonths: ["July", "August"],
+    bestMonthsReason:
+      "Classic New England beach season on the Cape.",
 
     featured: true,
     published: true,
@@ -835,6 +883,10 @@ export const properties: Property[] = [
       },
     ],
 
+    bestMonths: ["September"],
+    bestMonthsReason:
+      "Still warm enough for the harbor, without the July/August crowds.",
+
     featured: false,
     published: true,
     dateAdded: "2026-03-01",
@@ -896,6 +948,10 @@ export const properties: Property[] = [
           "Verified guests consistently highlight suspension bridge entry and say the space over-delivers for couples. Cleanliness and host communication come up often in the 62 reviews on file.",
       },
     ],
+
+    bestMonths: ["October"],
+    bestMonthsReason:
+      "Fall canopy color, the best time of year to be up in the trees.",
 
     featured: false,
     published: true,
